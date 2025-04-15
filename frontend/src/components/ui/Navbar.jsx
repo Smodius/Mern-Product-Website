@@ -4,11 +4,13 @@ import { CiSquarePlus } from "react-icons/ci"
 import { IoMoonOutline } from "react-icons/io5"
 import { useColorMode } from '@chakra-ui/react'
 import { MdOutlineWbSunny } from "react-icons/md"
+import { useColorModeValue } from '@chakra-ui/react'
+
 
 const Navbar = () => {
 const { colorMode, toggleColorMode } = useColorMode()
   return ( 
-    <Container maxW={"1140px"} px="2">
+    <Container maxW={"auto"} px="2">
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"} flexDirection={{base:"column", sm:"row"}}>
             <Text
 					fontSize={{ base: "22", sm: "28" }}
@@ -18,13 +20,13 @@ const { colorMode, toggleColorMode } = useColorMode()
 					bgGradient="linear(to-r, teal.400, teal.600)"
 					bgClip={"text"}
 				>
-					<Link to={"/"}>Product Store 🛒</Link>
+					<Link to={"/"}>🛒 Product Store </Link>
 				</Text>
 
                 <HStack spacing={2} alignItems={"center"}>
                     <Link to={"/create"}>
                         <Button colorScheme={"teal"} variant={"solid"}>
-                            <CiSquarePlus fontSize={20} /> Create Product   
+                            <CiSquarePlus fontSize={20} />  
                         </Button> 
                     </Link>
                         <Button onClick={toggleColorMode} colorScheme={"teal"} variant={"solid"}>
