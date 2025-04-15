@@ -1,18 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Box, Button, Text } from "@chakra-ui/react";
+import { Route, Routes } from "react-router-dom";
+import ProductCreatepage from "./pages/ProductCreatepage";
+import Homepage from "./pages/Homepage";
+import Navbar from "./components/ui/Navbar";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-    </>
-  )
+    // <Box p={4} bg="gray.100">
+    //   <Text fontSize="2xl" color="teal.500">
+    //     Chakra is finally working!
+    //   </Text>
+    //   <Button mt={4} colorScheme="teal">
+    //     Click Me
+    //   </Button>
+    // </Box>
+
+    <Box minH={"100vh"}>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/create" element={<ProductCreatepage />} />
+      </Routes>
+    </Box>
+  );
 }
 
-export default App
+export default App;
