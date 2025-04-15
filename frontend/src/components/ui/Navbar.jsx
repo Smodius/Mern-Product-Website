@@ -25,8 +25,8 @@ const { colorMode, toggleColorMode } = useColorMode()
 
                 <HStack spacing={2} alignItems={"center"}>
                     <Link to={"/create"}>
-                        <Button colorScheme={"teal"} variant={"solid"}>
-                            <CiSquarePlus fontSize={20} />  
+                        <Button colorScheme={"teal"} variant={"solid"} to={"/create"}>
+                            <CiSquarePlus fontSize={20} /> 
                         </Button> 
                     </Link>
                         <Button onClick={toggleColorMode} colorScheme={"teal"} variant={"solid"}>

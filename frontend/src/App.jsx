@@ -16,7 +16,7 @@ function App() {
     //   </Button>
     // </Box>
 
-    <Box minH={"100vh"} bg={useColorModeValue("gray.100", "gray.800")}>
+    <Box minH={"100vh"} bg={useColorModeValue("gray.100", "gray.700")}>
       <Box bg={useColorModeValue("gray.200", "gray.900")}>
         <Navbar />
       </Box>
