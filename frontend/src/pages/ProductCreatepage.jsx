@@ -1,7 +1,7 @@
 import { Container, Heading, VStack, Box, Input, useColorModeValue, Button} from "@chakra-ui/react";
 import { useState } from "react";
 // import { useProductStore } from "../store/product";
-
+//this needs fixing /\
 
 const ProductCreatepage = () => {
     const [newProduct, setNewProduct] = useState({
@@ -13,7 +13,8 @@ const ProductCreatepage = () => {
     // const {createProduct} = useProductStore((state) => ({
     //     createProduct: state.createProduct,
     // }))
-
+    //this needs fixing /\
+    
     const handleCreateProduct = async () => {
         try {
             await createProduct(newProduct);
