@@ -3,9 +3,11 @@ import { Route, Routes } from "react-router-dom";
 import ProductCreatepage from "./pages/ProductCreatepage";
 import Homepage from "./pages/Homepage";
 import Navbar from "./components/ui/Navbar";
+import { useProductStore } from "./store/product";
 
 
 function App() {
+  const {products} = useProductStore()
   return (
     // <Box p={4} bg="gray.100">
     //   <Text fontSize="2xl" color="teal.500">
@@ -15,6 +17,7 @@ function App() {
     //     Click Me
     //   </Button>
     // </Box>
+
 
     <Box minH={"100vh"} bg={useColorModeValue("gray.100", "gray.700")}>
       <Box bg={useColorModeValue("gray.200", "gray.900")}>

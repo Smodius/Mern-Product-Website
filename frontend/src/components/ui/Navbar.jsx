@@ -5,10 +5,14 @@ import { IoMoonOutline } from "react-icons/io5"
 import { useColorMode } from '@chakra-ui/react'
 import { MdOutlineWbSunny } from "react-icons/md"
 import { useColorModeValue } from '@chakra-ui/react'
+import { useProductStore } from "../../store/product";
+
+
 
 
 const Navbar = () => {
 const { colorMode, toggleColorMode } = useColorMode()
+const {products} = useProductStore()
   return ( 
     <Container maxW={"auto"} px="2">
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"} flexDirection={{base:"column", sm:"row"}}>

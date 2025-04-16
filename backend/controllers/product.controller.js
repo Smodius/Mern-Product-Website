@@ -34,7 +34,7 @@ export const updateProducts = async (req, res) => {
         }
 };
 
-export const createProducts = async (req, res) => {
+export const createProduct = async (req, res) => {
     const product = req.body; //user will send this data
 
     if(!product.name || !product.price || !product.image) {
