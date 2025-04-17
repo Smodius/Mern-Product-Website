@@ -86,7 +86,6 @@ const ProductCreatepage = () => {
                     <Button width={"full"} colorScheme={"teal"} variant={"solid"} onClick={handleCreateProduct}>
                         Create Product
                     </Button>
-                    <IconButton icon={<EditIcon color="white" />} colorScheme="teal" aria-label="Edit Product" />
                 </VStack>
             
             </Box>
