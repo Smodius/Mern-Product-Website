@@ -1,6 +1,8 @@
+
+import ProductCards from "../components/ui/ProductCard";
 import { useProductStore } from "../store/product";
 import { Container, VStack, SimpleGrid, Box, Text} from '@chakra-ui/react'
-import { use, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const Homepage = () => {
@@ -25,14 +27,7 @@ const Homepage = () => {
 
         <SimpleGrid columns={{base:1, md:2, lg:3}} spacing={10} w={"full"}>
           {products.map((product) => (
-            <Box key={product._id} p={5} shadow="md" borderWidth="1px" borderRadius="md">
-              <Text fontSize="xl" fontWeight="bold">{product.name}</Text>
-              <Text mt={2}>Price: ${product.price}</Text>
-              <Text mt={2}>{product.description}</Text>
-              <Link to={`/products/${product._id}`}>
-                <Text color="teal.500" mt={2} textDecoration="underline">View Details</Text>
-              </Link>
-            </Box>
+            <ProductCards key = {product._id} product={product} /> // pass the product as a prop to the ProductCards component
           ))}
         </SimpleGrid>
 

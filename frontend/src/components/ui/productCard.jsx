@@ -4,7 +4,7 @@ import { useToast } from "@chakra-ui/react";
 
 
 
-const ProductCard = ({product}) => {
+const ProductCards = ({product}) => {
     const textcolor = useColorModeValue("gray.800", "white")
     const toast = useToast()
     // const handleEditProducts = () => {
@@ -41,17 +41,17 @@ const ProductCard = ({product}) => {
       _hover={{ transform: "translaterY(-5px)", shadow: "xl" }}>
        
         <Box p={4}>
-        <Image src={product.image} alt={product.name} width="100%" height="200px" objectFit="cover" />
+            <Image src={product.image} alt={product.name} width="100%" height="200px" objectFit="cover" />
 
             <Heading as="h3" size="lg" mb={2}>
                 {product.name}
             </Heading>
 
-            <Text fonteWeight='bold' fontSize="xl" color="white" mb={4}>
+            <Text fontWeight='bold' fontSize="xl" color="white" mb={4}>
                 ${product.price}
             </Text>
             <HStack spacing={2}>
-                <IconButton icon={<EditIcon />} colorScheme="teal" aria-label="Edit Product" />
+                <IconButton icon={<EditIcon color="white" />} colorScheme="teal" aria-label="Edit Product" />
                 <IconButton icon={<DeleteIcon />} colorScheme="teal" aria-label="Delete Product" onClick={handleDeleteProducts} />
             </HStack>
         </Box>
@@ -60,4 +60,4 @@ const ProductCard = ({product}) => {
   )
 }
 
-export default ProductCard
+export default ProductCards
