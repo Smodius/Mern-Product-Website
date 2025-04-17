@@ -56,7 +56,7 @@ export const createProduct = async (req, res) => {
     }
 };
 
-export const deleteProducts = async (req, res) => {  
+export const deleteProduct = async (req, res) => {  
     const { id } = req.params; // get the id from the request params
     console.log("id:", id); // log the id to the console
 
