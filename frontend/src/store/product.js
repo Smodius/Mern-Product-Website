@@ -36,4 +36,30 @@ export const useProductStore = create((set) => ({
         set((state) => ({products: state.products.filter((product) => product._id !== id) }));
         return { success: true, message: "deleted successfully" };
     },
+    updateProducts: async (id, updatedProduct) => {
+        try {
+            const response = await fetch(`/api/products/${id}`, {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(updatedProduct),
+            });
+        
+            const data = await response.json();
+        
+            // Optional: Update local state too
+            set((state) => ({
+              products: state.products.map((p) =>
+                p._id === id ? { ...p, ...updatedProduct } : p
+              ),
+            }));
+        
+            return { success: true, message: "Product updated successfully" };
+          } catch (error) {
+            console.error("Update failed:", error);
+            return { success: false, message: "Failed to update product" };
+          }
+    },
 })); 
+
