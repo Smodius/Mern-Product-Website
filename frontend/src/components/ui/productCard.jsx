@@ -100,7 +100,7 @@ const ProductCards = ({product}) => {
             </Text>
             <HStack spacing={2}>
                 <IconButton icon={<EditIcon color="teal" />} colorScheme="gray" aria-label="Edit Product" onClick={onOpen}/>
-                <IconButton icon={<DeleteIcon color="red"/>} colorScheme="gray" aria-label="Delete Product" onClick={()=>handleDeleteProducts(product._id,updateProducts)} />
+                <IconButton icon={<DeleteIcon color="red"/>} colorScheme="gray" aria-label="Delete Product" onClick={handleDeleteProducts} />
             </HStack>
         </Box>
 
