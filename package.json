@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon backend/app.js"
+    "dev": "cross-env NODE_ENV=development nodemon backend/app.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "cross-env NODE_ENV=production node backend/app.js"
   },
   "type": "module",
   "keywords": [],
@@ -12,8 +14,11 @@
   "description": "",
   "dependencies": {
     "dotenv": "^16.4.7",
-    "express": "^5.1.0",
+    "express": "^4.20.0",
     "mongoose": "^8.13.2",
     "nodemon": "^3.1.9"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }

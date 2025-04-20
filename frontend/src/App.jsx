@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Box, Button, Text, useColorModeValue } from "@chakra-ui/react";
+import { Route, Routes } from "react-router-dom";
+import ProductCreatepage from "./pages/ProductCreatepage";
+import Homepage from "./pages/Homepage";
+import Navbar from "./components/ui/Navbar";
+import { useProductStore } from "./store/product";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const {products} = useProductStore()
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    // <Box p={4} bg="gray.100">
+    //   <Text fontSize="2xl" color="teal.500">
+    //     Chakra is finally working!
+    //   </Text>
+    //   <Button mt={4} colorScheme="teal">
+    //     Click Me
+    //   </Button>
+    // </Box>
+
+
+    <Box minH={"100vh"} bg={useColorModeValue("gray.100", "gray.800")}>
+      <Box bg={useColorModeValue("gray.200", "gray.900")}>
+        <Navbar />
+      </Box>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/create" element={<ProductCreatepage />} />
+      </Routes>
+    </Box>
+  );
 }
 
-export default App
+export default App;
